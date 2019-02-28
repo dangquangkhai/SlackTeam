@@ -1,0 +1,173 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/Asset/plugins/images/favicon.png">
+    <title>SlackTeam App Login</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/Asset/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- animation CSS -->
+    <link href="~/Content/Asset/css/animate.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Content/Asset/css/style.css" rel="stylesheet">
+    <!-- color CSS -->
+    <link href="~/Content/Asset/css/colors/blue.css" id="theme" rel="stylesheet">
+    <link href="~/Content/Asset/plugins/bower_components/toast/jquery.toast.min.css" rel="stylesheet"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="~/Content/Asset/cssload-speeding-wheel"></div>
+    </div>
+    <section id="wrapper" class="login-register">
+        <div class="login-box login-sidebar" id="LoginApp">
+            <div class="white-box">
+                <div class="form-horizontal form-material" id="loginform">
+                    <a href="javascript:void(0)" class="text-center db"><img src="~/Content/Asset/plugins/images/admin-logo-dark.png" alt="Home" /><br /><img src="~/Content/Asset/plugins/images/admin-text-dark.png" alt="Home" /></a>
+
+                    <div class="form-group m-t-40">
+                        <div class="col-xs-12">
+                            <input class="form-control" type="text" required="" placeholder="Email" v-model="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input class="form-control" type="password" required="" placeholder="Mật khẩu" v-model="Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <p style="color:red;font-weight:500;">{{Error}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="checkbox checkbox-primary pull-left p-t-0">
+                                <input id="checkbox-signup" type="checkbox">
+                                <label for="checkbox-signup"> Remember Me </label>
+                            </div>
+                            <a href="javascript:void(0)" id="to-recover" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> Quên mật khẩu?</a>
+                        </div>
+                    </div>
+                    <div class="form-group text-center m-t-20">
+                        <div class="col-xs-12">
+                            <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" v-on:click="Login()">Đăng Nhập</button>
+                        </div>
+                    </div>
+                    @*<div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
+                            <div class="social"><a href="javascript:void(0)" class="btn  btn-facebook" data-toggle="tooltip" title="Login with Facebook"> <i aria-hidden="true" class="fa fa-facebook"></i> </a> <a href="javascript:void(0)" class="btn btn-googleplus" data-toggle="tooltip" title="Login with Google"> <i aria-hidden="true" class="fa fa-google-plus"></i> </a> </div>
+                        </div>
+                    </div>*@
+                    <div class="form-group m-b-0">
+                        <div class="col-sm-12 text-center">
+                            <p>Chưa có tài khoản? <a href="register2.html" class="text-primary m-l-5"><b>Đăng Ký</b></a></p>
+                        </div>
+                    </div>
+                </div>
+                <form class="form-horizontal" id="recoverform" action="index.html">
+                    <div class="form-group ">
+                        <div class="col-xs-12">
+                            <h3>Quên Mật Khẩu</h3>
+                            <p class="text-muted">Nhập email đã đăng ký </p>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <div class="col-xs-12">
+                            <input class="form-control" type="text" required="" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group text-center m-t-20">
+                        <div class="col-xs-12">
+                            <button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Gửi</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- jQuery -->
+    <script src="~/Content/Asset/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Content/Asset/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Menu Plugin JavaScript -->
+    <script src="~/Content/Asset/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+
+    <!--slimscroll JavaScript -->
+    <script src="~/Content/Asset/js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="~/Content/Asset/js/waves.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="~/Content/Asset/js/custom.min.js"></script>
+    <!--Style Switcher -->
+    <script src="~/Content/Asset/plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="~/Content/Asset/plugins/bower_components/toast/jquery.toast.min.js"></script>
+    <script src="~/Scripts/vue.min.js"></script>
+    <script src="~/Scripts/axios.min.js"></script>
+    <script src="~/Scripts/config.js"></script>
+    <script src="~/Scripts/LibUtils.js"></script>
+
+    <script>
+        var CONTROLLER = WEB_BASE_URL + "/Account";
+    </script>
+    <script>
+        var LoginApp = new Vue({
+            el: "#LoginApp",
+            data() {
+                return {
+                    Email: null,
+                    Password: null,
+                    Error: null
+                }
+            },
+            updated() {
+
+            },
+            mounted() {
+
+            },
+            methods: {
+                Login: function () {
+                    if (LibUtils.isEmpty(this.Email) || LibUtils.isEmpty(this.Password)) {
+                        this.Error = "Chưa nhập email hoặc mật khẩu!!";
+                        return;
+                    }
+                    axios
+                        .post(CONTROLLER + "/Login", { Email: this.Email, Password: this.Password })
+                        .then(response => {
+                            if (response.data.success) {
+                                this.Error = null;
+                                var url = '@ViewBag.ReturnUrl';
+                                if (url == undefined || url == "" || url == null)
+                                    window.open(API_BASE_URL + "/Home", "_self");
+                                else
+                                    window.open(url, "_self");
+                            }
+                            else {
+                                this.Error = response.data.content;
+                                LibUtils.callToast("Không thành công", response.data.content, "error");
+                            }
+                        });
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>
+

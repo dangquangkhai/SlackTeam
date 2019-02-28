@@ -1,0 +1,12 @@
+D:\Projects\SlackTeam\SlackTeam.LIB\bin\Debug\SlackTeam.LIB.dll.config
+D:\Projects\SlackTeam\SlackTeam.LIB\bin\Debug\SlackTeam.LIB.dll
+D:\Projects\SlackTeam\SlackTeam.LIB\bin\Debug\SlackTeam.LIB.pdb
+D:\Projects\SlackTeam\SlackTeam.LIB\bin\Debug\EntityFramework.dll
+D:\Projects\SlackTeam\SlackTeam.LIB\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\SlackTeam\SlackTeam.LIB\bin\Debug\EntityFramework.xml
+D:\Projects\SlackTeam\SlackTeam.LIB\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\SlackTeam\SlackTeam.LIB\obj\Debug\SlackTeam.LIB.csprojAssemblyReference.cache
+D:\Projects\SlackTeam\SlackTeam.LIB\obj\Debug\SlackTeam.LIB.csproj.CoreCompileInputs.cache
+D:\Projects\SlackTeam\SlackTeam.LIB\obj\Debug\SlackTeam.LIB.csproj.CopyComplete
+D:\Projects\SlackTeam\SlackTeam.LIB\obj\Debug\SlackTeam.LIB.dll
+D:\Projects\SlackTeam\SlackTeam.LIB\obj\Debug\SlackTeam.LIB.pdb
