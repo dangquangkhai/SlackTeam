@@ -49,7 +49,7 @@
                         <div class="col-xs-12">
                             <input class="form-control" type="password" required="" placeholder="Mật khẩu" v-model="Password">
                         </div>
-                    </div>
+                    </div>  
                     <div class="form-group">
                         <div class="col-xs-12">
                             <p style="color:red;font-weight:500;">{{Error}}</p>
@@ -76,7 +76,7 @@
                     </div>*@
                     <div class="form-group m-b-0">
                         <div class="col-sm-12 text-center">
-                            <p>Chưa có tài khoản? <a href="register2.html" class="text-primary m-l-5"><b>Đăng Ký</b></a></p>
+                            <p>Chưa có tài khoản? <a v-on:click="OpenRegister()" class="text-primary m-l-5"><b>Đăng Ký</b></a></p>
                         </div>
                     </div>
                 </div>
@@ -163,9 +163,11 @@
                                 LibUtils.callToast("Không thành công", response.data.content, "error");
                             }
                         });
+                },
+                OpenRegister: function () {
+                    window.open(CONTROLLER + "/Register", "_self");
                 }
             }
-
         });
     </script>
 </body>

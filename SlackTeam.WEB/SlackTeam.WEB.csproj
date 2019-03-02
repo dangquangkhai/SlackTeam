@@ -192,6 +192,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApiUserController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1231,6 +1232,10 @@
     <Content Include="Content\Asset\plugins\bower_components\flot\jquery.flot.time.js" />
     <Content Include="Content\Asset\plugins\bower_components\flot\jquery.js" />
     <Content Include="Content\Asset\plugins\bower_components\flot\LICENSE.txt" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\HELP-US-OUT.txt" />
     <Content Include="Content\Asset\plugins\bower_components\footable\css\fonts\footable.svg" />
     <Content Include="Content\Asset\plugins\bower_components\footable\css\footable.core.css" />
     <Content Include="Content\Asset\plugins\bower_components\footable\js\footable.all.min.js" />
@@ -1526,6 +1531,11 @@
     <Content Include="Content\Asset\plugins\bower_components\jsgrid\tests\jsgrid.validation.tests.js" />
     <Content Include="Content\Asset\plugins\bower_components\knob\jquery.knob.js" />
     <Content Include="Content\Asset\plugins\bower_components\knob\jquery.knob.min.js" />
+    <Content Include="Content\Asset\plugins\bower_components\ladda\ladda.css" />
+    <Content Include="Content\Asset\plugins\bower_components\ladda\ladda.jquery.min.js" />
+    <Content Include="Content\Asset\plugins\bower_components\ladda\ladda.min.css" />
+    <Content Include="Content\Asset\plugins\bower_components\ladda\ladda.min.js" />
+    <Content Include="Content\Asset\plugins\bower_components\ladda\spin.min.js" />
     <Content Include="Content\Asset\plugins\bower_components\Magnific-Popup-master\dist\jquery.magnific-popup-init.js" />
     <Content Include="Content\Asset\plugins\bower_components\Magnific-Popup-master\dist\jquery.magnific-popup.js" />
     <Content Include="Content\Asset\plugins\bower_components\Magnific-Popup-master\dist\jquery.magnific-popup.min.js" />
@@ -3085,6 +3095,39 @@
     <Content Include="Content\Asset\plugins\bower_components\typeahead.js-master\typeahead.js.jquery.json" />
     <Content Include="Content\Asset\plugins\images\assets\photothumb.db" />
     <Content Include="Content\Asset\plugins\images\large\.DS_Store" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Content\Asset\plugins\bower_components\font-awesome-4.7.0\scss\_variables.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -3126,6 +3169,9 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ActiveUser.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

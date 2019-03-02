@@ -4402,7 +4402,7 @@ table.focus-on tbody tr.focused td, table.focus-on tbody tr.focused th {
 }
 
     .new-login-register .lg-info-panel {
-        background: url(../../plugins/images/login-register.jpg) center center/cover no-repeat !important;
+        background: url(../plugins/images/login-register.jpg) center center/cover no-repeat !important;
         width: 500px;
         height: 100%;
         position: fixed

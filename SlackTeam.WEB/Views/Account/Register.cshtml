@@ -1,0 +1,223 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/Asset/plugins/images/favicon.png">
+    <title>SlackTeam App Register</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/Asset/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- animation CSS -->
+    <link href="~/Content/Asset/css/animate.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Content/Asset/css/style.css" rel="stylesheet">
+    <!-- color CSS -->
+    <link href="~/Content/Asset/css/colors/default.css" id="theme" rel="stylesheet">
+    <link href="~/Content/Asset/plugins/bower_components/toast/jquery.toast.min.css" rel="stylesheet" />
+    <link href="~/Content/Asset/plugins/bower_components/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link href="~/Content/Asset/plugins/bower_components/ladda/ladda.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="~/Content/Asset/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Content/Asset/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Menu Plugin JavaScript -->
+    <script src="~/Content/Asset/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <!--slimscroll JavaScript -->
+    <script src="~/Content/Asset/js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="~/Content/Asset/js/waves.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="~/Content/Asset/js/custom.min.js"></script>
+    <!--Style Switcher -->
+    <script src="~/Content/Asset/plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+
+    <script src="~/Content/Asset/plugins/bower_components/toast/jquery.toast.min.js"></script>
+    <script src="~/Content/Asset/plugins/bower_components/ladda/spin.min.js"></script>
+    <script src="~/Content/Asset/plugins/bower_components/ladda/ladda.min.js"></script>
+    <script src="~/Scripts/vue.js"></script>
+    <script src="~/Scripts/axios.min.js"></script>
+    <script src="~/Scripts/config.js"></script>
+    <script src="~/Scripts/LibUtils.js"></script>
+    <style>
+        div[role="progressbar"] {
+            left: 230px;
+            top: 21px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+    <section id="RegisterApp" style="width:100%;" class="new-login-register">
+        <div class="lg-info-panel">
+            <div class="inner-panel">
+                <a href="javascript:void(0)" class="p-20 di"><img src="~/Content/Asset/plugins/images/admin-logo.png"></a>
+                <div class="lg-content">
+                    <h2>SLACKTEAM APP CHAT DEVELOP BY KHAI DANG</h2>
+                    <p class="text-muted">Phần mềm support các team chat với nhau</p>
+                </div>
+            </div>
+        </div>
+        <div class="new-login-box" v-if="!RegisterSuccess">
+            <div class="white-box">
+                <h3 class="box-title m-b-0">Đăng Ký Tài Khoản</h3> <small>Điền thông tin như bên dưới</small>
+                <div class="form-horizontal new-lg-form" id="loginform">
+                    <div class="form-group ">
+                        <div class="col-xs-12">
+                            <input class="form-control" type="text" required="" placeholder="Họ" v-model="User.Lastname">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <div class="col-xs-12">
+                            <input class="form-control" type="text" required="" placeholder="Tên" v-model="User.Firstname">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <div class="col-xs-12">
+                            <input class="form-control" type="text" required="" placeholder="Email" v-model="User.Email">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <div class="col-xs-12">
+                            <input class="form-control" type="password" required="" placeholder="Mật Khẩu" v-model="User.Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input class="form-control" type="password" required="" placeholder="Nhập Lại Mật Khẩu" v-model="ConfirmPassword">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom:0px;">
+                        <div class="col-xs-12">
+                            <p style="color: red; font-weight:500;">{{Error}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="checkbox checkbox-primary p-t-0">
+                                <input id="checkbox-signup" type="checkbox">
+                                <label for="checkbox-signup"> Tôi Đồng Ý Với <a href="#">Thỏa Thuận Người Dùng Cuối</a></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group text-center m-t-20">
+                        <div class="col-xs-12">
+                            @*<button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" v-on:click="Register()">Đăng Ký</button>*@
+                            <button v-on:click="Register()" type="button" id="registerBtn" class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" data-style="zoom-in">
+                                <span class="ladda-label">
+                                    Đăng Ký
+                                </span>
+                                <span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group m-b-0">
+                        <div class="col-sm-12 text-center">
+                            <p>Đã có tài khoản <a v-on:click="OpenLogin()" class="text-danger m-l-5"><b>Đăng Nhập</b></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="new-login-box" id="animationSandbox" v-if="RegisterSuccess">
+            <h1 class="box-title m-b-0" style="text-align:center; text-transform:uppercase;">Đăng Ký Tài Khoản Thành Công!!</h1>
+            <h4 style="text-align:center; font-style:italic;">Kiểm tra email đăng ký để nhận link kích hoạt tài khoản</h4>
+            <p style="text-align:center;"><i aria-hidden="true" class="fa fa-check-circle" style="font-size: 60px;color: green; text-align:center;"></i></p>
+            <p style="text-align:center;"><a href="index.html" class="btn btn-default btn-rounded waves-effect waves-light m-b-40">Trang Chủ</a></p>
+        </div>
+
+    </section>
+    <!-- jQuery -->
+
+    <script>
+        var CONTROLLER = WEB_BASE_URL + "/Account";
+    </script>
+    <script>
+        var RegisterApp = new Vue({
+            el: "#RegisterApp",
+            data() {
+                return {
+                    User: {
+                        Email: null,
+                        Password: null,
+                        Firstname: null,
+                        Lastname: null
+                    },
+                    ConfirmPassword: null,
+                    RegisterSuccess: false,
+                    Error: null
+                }
+            },
+            updated() {
+
+            },
+            mounted() {
+
+            },
+            methods: {
+                Register: function () {
+                    if (LibUtils.isEmpty(this.User.Email) || LibUtils.isEmpty(this.User.Password)) {
+                        this.Error = "Chưa nhập email hoặc mật khẩu!!";
+                        return;
+                    }
+                    if (LibUtils.isEmpty(this.User.Firstname)) {
+                        this.Error = "Chưa nhập tên!!";
+                        return;
+                    }
+                    if (LibUtils.isEmpty(this.User.Lastname)) {
+                        this.Error = "Chưa nhập họ!!";
+                        return;
+                    }
+                    if (this.User.Password !== this.ConfirmPassword) {
+                        this.Error = "Mật khảu không khớp!!";
+                        return;
+                    }
+                    this.Error = "";
+                    var registerBtn = Ladda.create(document.querySelector('#registerBtn'));
+                    registerBtn.start();
+                    axios
+                        .post(CONTROLLER + "/CreateAccount", { newUser: this.User })
+                        .then(response => {
+                            if (response.data.success) {
+                                this.RegisterSuccess = true;
+                                $("#animationSandbox").addClass("bounceInDown animated");
+                            }
+                            else {
+                                this.Error = response.data.content;
+                                LibUtils.callToast("Không thành công", response.data.content, "error");
+
+                                setTimeout(function () {
+                                    registerBtn.stop();
+                                }, 1000);
+                            }
+                        });
+                },
+                OpenLogin: function () {
+                    window.open(CONTROLLER + "/Index", "_self");
+                }
+            }
+
+        });
+    </script>
+</body>
+
+</html>

@@ -39,6 +39,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -53,6 +54,7 @@
   <ItemGroup>
     <Compile Include="HashString.cs" />
     <Compile Include="HashStringMD5.cs" />
+    <Compile Include="Model\ActiveUser.cs" />
     <Compile Include="Model\BlockList.cs" />
     <Compile Include="Model\Conversation.cs" />
     <Compile Include="Model\HistoryLogin.cs" />
@@ -69,7 +71,9 @@
     <Compile Include="StringCipher.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

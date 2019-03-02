@@ -19,6 +19,7 @@ namespace SlackTeam.LIB.Model
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserContact> UserContacts { get; set; }
         public virtual DbSet<HistoryLogin> HistoryLogins { get; set; }
+        public virtual DbSet<ActiveUser> ActiveUsers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -71,6 +72,11 @@ namespace SlackTeam.LIB.Model
                 .HasMany(e => e.UserContacts1)
                 .WithRequired(e => e.User1)
                 .HasForeignKey(e => e.Contact_ID)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.ActiveUsers)
+                .WithRequired(e => e.User)
+                .HasForeignKey(e => e.User_ID)
                 .WillCascadeOnDelete(false);
         }
     }

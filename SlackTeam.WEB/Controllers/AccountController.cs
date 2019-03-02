@@ -24,6 +24,31 @@ namespace SlackTeam.WEB.Controllers
             return View();
         }
 
+
+
+        [HttpPost]
+        public JsonResult CreateAccount(User newUser)
+        {
+            try
+            {
+                return Json(new { success = _provider.CreateUser(newUser) });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, content = ex.Message.ToString() });
+            }
+        }
+
+        [HttpGet]
+        public ActionResult ActiveUser(String url)
+        {
+            if (!_provider.ActiveUser(url))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            return View();
+        }
+
         [HttpPost]
 
         public JsonResult Login(String Email, String Password, Boolean Remember = false, string ReturnUrl = null)
